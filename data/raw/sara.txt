@@ -8,7 +8,16 @@
 # lat2	solution2 latitude
 # lon2	solution2 longitude
 # nb_mes	number of messages received
-
+# big_nb_mes	number of messages received by satellite with signal strength greater than -120 decibels
+# best_level	strongest signal strength received
+# pass_duration	time elapsed between first and last messages being received by satellite
+# nopc	number of successful plausibility checks (0 to 4)
+# calcul_freq	calculated transmit frequency 
+# altitude	altitude used in location calculation
+uid	tag_id	utc	lc	iq	lat1	lon1	lat2	lon2	nb_mes	big_nb_mes	best_level	pass_duration	nopc	calcul_freq	altitude
+20616	29051	7/3/2003 9:13	3	66	33.898	-77.958	27.369	-46.309	6	0	-126	529	3	401 651134.7	0
+21892	29051	7/3/2003 9:23	B	0	33.887	-77.95	43.983	-128.418	2	0	-132	96	1	401 651133.1	0
+20618	29051	7/3/2003 10:31	A	6	33.884	-77.946	22.875	-25.276	3	0	-132	320	3	401 651169.3	0
 20619	29051	7/3/2003 10:49	A	7	33.927	-78.008	37.291	-94.435	3	0	-125	260	2	401 651166.8	0
 20620	29051	7/3/2003 12:10	2	67	33.901	-77.909	31.005	-64.614	4	0	-124	612	3	401 651181.6	0
 20621	29051	7/3/2003 12:11	B	0	33.575	-77.691	32.741	-73.276	2	0	-126	408	2	401 651134.7	0

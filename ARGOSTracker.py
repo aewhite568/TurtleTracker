@@ -19,8 +19,11 @@ lineList = fileObj.readlines()
 # Closes the file object (now that we have all we need)
 fileObj.close()
 
-# Extract the first line from the lineList
-for lineString in lineList:
+#read data
+lineString = fileObj.readline()
+
+#while loop
+while lineString:
     
     # Use the split command to parse the items in lineString into a list object
     lineData = lineString.split("\t")
@@ -36,3 +39,7 @@ for lineString in lineList:
     
     # Print information to the user
     print ("Record {0} indicates Sara was seen at {1}N and {2}W on {3}".format(recordID,obsLat,obsLon,obsDate))
+    
+    lineString = fileObj.readline()
+
+fileObj.close()

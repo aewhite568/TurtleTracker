@@ -13,21 +13,23 @@ fileName = "data/raw/saraNoHeader.txt"
 # Open the file as a read-only file object
 fileObj = open(fileName, 'r')
 
-# Read in all lines in the text file into a list variable
-lineList = fileObj.readlines()
+# Read the first line from the open file object
+lineStrings = fileObj.readlines()
+print ("There are {} records in the file".format(len(lineStrings)))
 
-# Closes the file object (now that we have all we need)
+# Close the file object
 fileObj.close()
 
-#read data
-lineString = fileObj.readline()
+# Create empty dictionaries
+dateDict = {}
+locationDict = {}
 
-#while loop
-while lineString:
-    
+# Use a for loop to read each line, one at a time, until the list is exhausted
+for lineString in lineStrings:
+
     # Use the split command to parse the items in lineString into a list object
     lineData = lineString.split("\t")
-    
+
     # Assign variables to specfic items in the list
     recordID = lineData[0]              # ARGOS tracking record ID
     obsDateTime = lineData[2]           # Observation date and time (combined)
@@ -36,10 +38,10 @@ while lineString:
     obsLC = lineData[3]                 # Observation Location Class
     obsLat = lineData[5]                # Observation Latitude
     obsLon = lineData[6]                # Observation Longitude
-    
-    # Print information to the user
-    print ("Record {0} indicates Sara was seen at {1}N and {2}W on {3}".format(recordID,obsLat,obsLon,obsDate))
-    
-    lineString = fileObj.readline()
 
-fileObj.close()
+    # Add values to dictionary    
+    dateDict[recordID] = obsDateTime
+    locationDict[recordID] = (obsLat, obsLon)
+
+# Indicate script is complete
+print ("Finished")
